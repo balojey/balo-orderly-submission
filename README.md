@@ -2,7 +2,11 @@
 
 _Strategy_: **EMA Momentum and Slope Breakout Strategy (EMSB)**
 
-_Focus_: Profit from explosive breakout moves by combining momentum and price slope.
+_Focus_: **Profit from explosive breakout moves by combining momentum and price slope.**
+
+_Market Focus_: **BTC/USDC**
+
+_Time Horizon_: **Short-term (14-days)**
 
 _Indicators_:
 

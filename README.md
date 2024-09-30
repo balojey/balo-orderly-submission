@@ -1,19 +1,23 @@
 # balo-orderly-submission
 
-_Strategy_: **EMA Momentum and Slope Breakout Strategy (EMSB)**
+## Strategy
+**EMA Momentum and Slope Breakout Strategy (EMSB)**
 
-_Focus_: **Profit from explosive breakout moves by combining momentum and price slope.**
+## Focus
+**Profit from explosive breakout moves by combining momentum and price slope.**
 
-_Market Focus_: **BTC/USDC**
+## Market Focus
+**BTC/USDC**
 
-_Time Horizon_: **Short-term (14-days)**
+## Time Horizon
+**Short-term (14-days)**
 
-_Indicators_:
+## Indicators
 
 * Exponential Moving Average (EMA): 9-day and 14-day EMAs.
 * Slope Indicator: Measures the slope of price action to confirm momentum.
 
-_Execution_:
+## Execution
 
 1. Identify Momentum with EMAs:
     * Use a 9-day EMA and a 14-day EMA to detect short-term momentum.
@@ -40,7 +44,21 @@ _Execution_:
 6. Take Profit:
     * Set a trailing stop to lock in profits as the trend continues.
 
-_Why It Works_:
+## Why It Works
 * Innovation: Combining EMA crossovers with the Slope indicator amplifies the strategy’s ability to catch strong momentum-based breakouts, especially in short-term timeframes.
 
 * Profitability: By focusing on periods of sharp price movement and using trailing stops, the strategy maximizes gains from explosive price moves.
+
+## Set Up
+1. Install [poetry](https://python-poetry.org/)
+2. Clone repo: `git clone https://github.com/balojey/balo-orderly-submission`
+3. Change directory: `cd balo-orderly-submission`
+4. Install dependencies: `poetry install`
+5. Create and populate `.env` file
+```
+touch .env
+echo "PRIVATE_KEY=<enter your wallet private key here>" > .env
+```
+6. Open `emsb.ipynb`
+7. Click "Select kernel" and select appropriate kernel
+8. Click "Run all"

@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "balo-orderly-submission"
+version = "0.1.0"
+description = ""
+authors = ["balo <98645847+balojey@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+base58 = "2.1.1"
+bokeh = "3.4.1"
+cryptography = "42.0.5"
+eth-rpc-py = "0.1.8post6"
+eth-typing = "4.1.0"
+eth-utils = "4.1.0"
+httpx = "0.27.0"
+pandas = "2.2.2"
+pydantic = ">=2.7.0"
+python-dotenv = "1.0.1"
+requests = "2.31.0"
+pandas-ta = "^0.3.14b0"
+numpy = "1.26.4"
+setuptools = "^75.1.0"
+matplotlib = "^3.9.2"
+ipykernel = "^6.29.5"
+eth-typeshed-py = "^0.1.9.post1"
+emp-orderly = "^1.0"
+emp-orderly-types = "^1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

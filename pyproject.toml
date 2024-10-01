@@ -28,6 +28,8 @@ emp-orderly = "^1.0"
 emp-orderly-types = "^1.0"
 empyrealsdk = "^0.0.1.post14"
 eth-hash = {extras = ["pycryptodome"], version = "^0.7.0"}
+alpaca-trade-api = "^3.2.0"
+transformers = "^4.45.1"
 
 
 [tool.poetry.group.dev.dependencies]

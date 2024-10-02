@@ -1,64 +1,41 @@
 # balo-orderly-submission
 
-## Strategy
-**EMA Momentum and Slope Breakout Strategy (EMSB)**
+## EMA Cross Strategy Overview
 
-## Focus
-**Profit from explosive breakout moves by combining momentum and price slope.**
+### 1. **Focus**
+The **EMA Cross Strategy** aims to leverage the crossover between two Exponential Moving Averages (EMAs) to capture short- to medium-term trends in the market. By tracking price momentum using EMAs, this strategy seeks to identify buying and selling opportunities when trend reversals or continuations are likely. The strategy primarily focuses on maximizing gains through an aggressive approach to capturing market momentum.
 
-## Market Focus
-**BTC/USDC**
+### 2. **Market Focus**
+This strategy is tailored for trading in **cryptocurrency markets**, particularly the **Perpetual Asset Type DOGE (Dogecoin)**. The strategy can be adapted for other liquid assets but is optimized for volatile and high-volume markets where rapid price movements and trends are common.
 
-## Time Horizon
-**Short-term (14-days)**
+### 3. **Time Horizon**
+The strategy is designed for **short-term trading** with a maximum run time of **14 days**, focusing on **five-minute intervals**. It is ideal for traders who want to capitalize on fast-moving markets and take advantage of short-lived price movements. The short-term focus makes it suitable for day traders and those looking to profit from rapid market trends.
 
-## Indicators
+### 4. **Indicators**
+The core indicators of the strategy are:
+- **12-Day EMA**: A short-term EMA that reacts quickly to recent price movements.
+- **26-Day EMA**: A longer-term EMA that smooths out price action over a more extended period.
+- **Crossover**: The strategy triggers buy signals when the 12-day EMA crosses above the 26-day EMA (Golden Cross) and sell signals when the 12-day EMA crosses below the 26-day EMA (Death Cross).
 
-* Exponential Moving Average (EMA): 9-day and 14-day EMAs.
-* Slope Indicator: Measures the slope of price action to confirm momentum.
+### 5. **Execution**
+The strategy operates as follows:
+- **Buy Signal**: When the 12-day EMA crosses above the 26-day EMA, indicating upward momentum (Golden Cross), the strategy buys the asset.
+- **Sell Signal**: When the 12-day EMA crosses below the 26-day EMA, signaling downward momentum (Death Cross), the strategy sells the asset or initiates a short position.
+- **Position Management**: The strategy closes any open positions before opening a new one to avoid overlapping trades, and trades are executed using an **order size of 99.9%** of available capital.
 
-## Execution
+### 6. **Why It Works**
+The **EMA Cross Strategy** works well because:
+- **Momentum Detection**: EMAs provide a smoothed representation of price trends, allowing the strategy to enter positions in the direction of the dominant trend.
+- **Quick Reactions**: The use of a shorter EMA (12-day) ensures the strategy reacts quickly to changing market conditions, while the longer EMA (26-day) prevents it from reacting to insignificant price fluctuations.
+- **Strong Market Movements**: Cryptocurrency markets like Dogecoin exhibit high volatility, which makes them ideal for capturing quick, substantial price movements. By focusing on crossover points, the strategy avoids low-momentum periods and capitalizes on significant trends.
 
-1. Identify Momentum with EMAs:
-    * Use a 9-day EMA and a 14-day EMA to detect short-term momentum.
-    * A bullish breakout occurs when the 9-day EMA crosses above the 14-day EMA, indicating upward momentum.
-    * A bearish breakout occurs when the 9-day EMA crosses below the 14-day EMA, signaling downward momentum.
-
-2. Confirm with Slope:
-    * The Slope indicator (calculated as the angle of the price trend) must be positive for long trades and negative for short trades.
-    * Use a Slope filter of at least 15° for bullish momentum and -15° for bearish momentum to ensure a strong price trend.
-
-3. Buy Signal:
-    * Enter a long position when:
-        * The 9-day EMA crosses above the 14-day EMA.
-        * The Slope indicator is greater than 15°.
-
-4. Sell Signal:
-    * Enter a short position when:
-        * The 9-day EMA crosses below the 14-day EMA.
-        * The Slope indicator is less than -15°.
-
-5. Stop Loss:
-    * Place a stop loss at the nearest price support or resistance level, adjusted to risk tolerance.
-
-6. Take Profit:
-    * Set a trailing stop to lock in profits as the trend continues.
-
-## Why It Works
-* Innovation: Combining EMA crossovers with the Slope indicator amplifies the strategy’s ability to catch strong momentum-based breakouts, especially in short-term timeframes.
-
-* Profitability: By focusing on periods of sharp price movement and using trailing stops, the strategy maximizes gains from explosive price moves.
+This approach allows for systematic and disciplined trading, reducing emotional bias and ensuring timely entry and exit points during trending markets.
 
 ## Set Up
 1. Install [poetry](https://python-poetry.org/)
 2. Clone repo: `git clone https://github.com/balojey/balo-orderly-submission`
 3. Change directory: `cd balo-orderly-submission`
 4. Install dependencies: `poetry install`
-5. Create and populate `.env` file
-```
-touch .env
-echo "PRIVATE_KEY=<enter your wallet private key here>" > .env
-```
-6. Open `emsb.ipynb`
-7. Click "Select kernel" and select appropriate kernel
-8. Click "Run all"
+5. Open `ema_cross.ipynb`
+6. Click "Select kernel" and select appropriate kernel
+7. Click "Run all"

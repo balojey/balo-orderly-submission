@@ -3,6 +3,16 @@
 ## EMA Cross Strategy Overview
 ![alt Strategy plot](assets/bokeh_plot.png "EMA Cross Strategy over DOGE")
 
+The report indicates a **38.63% return** over a period of approximately 7 days, significantly outperforming the **Buy & Hold return of 3.17%**. The strategy exhibits **strong profitability**, with a final equity of **$1,386,286** from an initial amount of $1,000,000.
+
+The strategy shows a relatively high exposure time of **83%**, indicating frequent market participation. However, the **Sharpe ratio of 0.46** suggests moderate risk-adjusted returns, while the **profit factor of 3.45** reveals that for every dollar lost, the strategy earns $3.45, a promising sign for profitability.
+
+While the win rate is **34.69%**, the strategy compensates for this with a high **best trade return of 17.23%**, and the overall **expectancy** of **0.71%** per trade shows consistent profitability across trades. However, the **maximum drawdown of 5.2%** reflects potential risk during unfavorable market conditions.
+
+Overall, this strategy appears profitable, with solid returns and a manageable risk profile.
+
+___
+
 ### 1. **Focus**
 The **EMA Cross Strategy** aims to leverage the crossover between two Exponential Moving Averages (EMAs) to capture short- to medium-term trends in the market. By tracking price momentum using EMAs, this strategy seeks to identify buying and selling opportunities when trend reversals or continuations are likely. The strategy primarily focuses on maximizing gains through an aggressive approach to capturing market momentum.
 

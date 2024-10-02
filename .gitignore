@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 .env
 EMSB.html
+__pycache__

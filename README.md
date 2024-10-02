@@ -33,10 +33,25 @@ The **EMA Cross Strategy** works well because:
 This approach allows for systematic and disciplined trading, reducing emotional bias and ensuring timely entry and exit points during trending markets.
 
 ## Set Up
+
 1. Install [poetry](https://python-poetry.org/)
-2. Clone repo: `git clone https://github.com/balojey/balo-orderly-submission`
-3. Change directory: `cd balo-orderly-submission`
-4. Install dependencies: `poetry install`
-5. Open `ema_cross.ipynb`
-6. Click "Select kernel" and select appropriate kernel
-7. Click "Run all"
+
+2. Clone repo: 
+```bash
+git clone https://github.com/balojey/balo-orderly-submission
+```
+
+3. Change directory:
+```bash
+cd balo-orderly-submission
+```
+
+4. Install dependencies:
+```bash
+poetry install
+```
+
+5. Run strategy:
+```bash
+poetry run python ema_cross.py
+```

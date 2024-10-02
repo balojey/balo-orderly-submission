@@ -1,6 +1,7 @@
 # balo-orderly-submission
 
 ## EMA Cross Strategy Overview
+![alt Strategy plot](assets/bokeh_plot.png "EMA Cross Strategy over DOGE")
 
 ### 1. **Focus**
 The **EMA Cross Strategy** aims to leverage the crossover between two Exponential Moving Averages (EMAs) to capture short- to medium-term trends in the market. By tracking price momentum using EMAs, this strategy seeks to identify buying and selling opportunities when trend reversals or continuations are likely. The strategy primarily focuses on maximizing gains through an aggressive approach to capturing market momentum.

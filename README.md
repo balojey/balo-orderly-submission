@@ -3,15 +3,6 @@
 ## EMA Cross Strategy Overview
 ![alt Strategy plot](assets/bokeh_plot.png "EMA Cross Strategy over DOGE")
 
-<<<<<<< HEAD
-The report indicates a **38.63% return** over a period of approximately 7 days, significantly outperforming the **Buy & Hold return of 3.17%**. The strategy exhibits **strong profitability**, with a final equity of **$1,386,286** from an initial amount of $1,000,000.
-
-The strategy shows a relatively high exposure time of **83%**, indicating frequent market participation. However, the **Sharpe ratio of 0.46** suggests moderate risk-adjusted returns, while the **profit factor of 3.45** reveals that for every dollar lost, the strategy earns $3.45, a promising sign for profitability.
-
-While the win rate is **34.69%**, the strategy compensates for this with a high **best trade return of 17.23%**, and the overall **expectancy** of **0.71%** per trade shows consistent profitability across trades. However, the **maximum drawdown of 5.2%** reflects potential risk during unfavorable market conditions.
-
-Overall, this strategy appears profitable, with solid returns and a manageable risk profile.
-=======
 ### Backtest Report: **EMA Cross Strategy**
 
 This report summarizes the performance of the **EMA Cross Strategy** over a **13-day period** from **September 28, 2024, to October 12, 2024**. The strategy was executed on a 15-minute interval with **SEI/USD** as the underlying asset, using a 5-period fast EMA and a 20-period slow EMA, combined with an RSI filter for trade validation. Below is a detailed breakdown of the results:
@@ -99,7 +90,6 @@ The average trade lasted **22 minutes**, indicating that the strategy is very sh
 ---
 
 The **EMA Cross Strategy** performed well in terms of risk-adjusted returns, offering a balanced approach to short-term trading. It minimized exposure, controlled drawdowns, and achieved strong profitability relative to the risk taken. Further refinement could enhance the win rate and allow the strategy to outperform a simple Buy & Hold approach over similar periods.
->>>>>>> 07cafda (Hot fix)
 
 ___
 

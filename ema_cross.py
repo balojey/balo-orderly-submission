@@ -1,3 +1,6 @@
+from typing import Union
+import pandas_ta as ta
+import pandas as pd
 import asyncio
 from dotenv import load_dotenv
 import matplotlib.pyplot as plt
@@ -23,39 +26,49 @@ class EmaCross(Strategy):
     
     order_size: The amount of order that can be 
         made at a time.
-    days_length_1: 12 days length for 
-        calculating 12 days EMA.
-    days_length_2: 26 days length for 
-        calculating 26 days EMA.
-    length: The number of days the Strategy is 
-        intended to run for.
+    parameters: The parameters
     """
 
-    order_size: float = 0.999
-    days_length_1: int = 12
-    days_length_2: int = 26
-    
-    @classmethod
-    def update_lags(cls, days_length_1, days_length_2):
-        cls.days_length_1 = days_length_1
-        cls.days_length_2 = days_length_2
+    # Define the strategy parameters
+    parameters: dict[str, Union[int, float]] = {
+        "fast_ema_period": 5,
+        "slow_ema_period": 20,
+        "rsi_period": 14,
+        "rsi_overbought": 70,
+        "rsi_oversold": 30,
+        "risk_percentage": 0.02,  # 2% risk per trade
+        "reward_risk_ratio": 2,   # Reward to risk ratio
+    }
 
+    order_size: float = 0.999
+    
     def init(self):
         close = self.data.close
-        self.ema_days_1 = self.I(EMA, close, self.days_length_1)
-        self.ema_days_2 = self.I(EMA, close, self.days_length_2)
+        self.fast_ema = self.I(EMA, close, self.parameters["fast_ema_period"])
+        self.slow_ema = self.I(EMA, close, self.parameters["slow_ema_period"])
+        self.current_price = self.data.df.close.iloc[-1]
 
     def next(self):
+        rsi = ta.rsi(self.data.df.close, self.parameters["rsi_period"])
+        current_rsi = rsi.iloc[-1]
         if (
-            crossover(self.ema_days_1, self.ema_days_2)
+            crossover(self.fast_ema, self.slow_ema)
+            and
+            self.parameters["rsi_oversold"] < current_rsi < self.parameters["rsi_overbought"]
         ):
-            self.position.close()
-            self.buy(size=self.order_size)
+            stop_loss_price = self.current_price * (1 - self.parameters["risk_percentage"])
+            take_profit_price = self.current_price * (1 + self.parameters["risk_percentage"] * self.parameters["reward_risk_ratio"])
+            limit_price = stop_loss_price + 0.001
+            self.buy(size=self.order_size, sl=stop_loss_price, tp=take_profit_price, limit=limit_price)
         elif (
-            crossover(self.ema_days_2, self.ema_days_1)
+            crossover(self.slow_ema, self.fast_ema)
+            and
+            self.parameters["rsi_oversold"] < current_rsi < self.parameters["rsi_overbought"]
         ):
-            self.position.close()
-            self.sell(size=self.order_size)
+            stop_loss_price = self.current_price * (1 + self.parameters["risk_percentage"])
+            take_profit_price = self.current_price * (1 - self.parameters["risk_percentage"] * self.parameters["reward_risk_ratio"])
+            limit_price = stop_loss_price - 0.001
+            self.sell(size=self.order_size, sl=stop_loss_price, tp=take_profit_price, limit=limit_price)
 
 
 tester = EmpOrderly(
@@ -71,8 +84,8 @@ tester.set_strategy(EmaCross)
 async def main():
     await tester.load_data(
         lookback=14,
-        interval=Interval.five_minute,
-        asset=PerpetualAssetType.DOGE,
+        interval=Interval.fifteen_minute,
+        asset=PerpetualAssetType.SEI,
     )
 
     # backtest

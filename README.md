@@ -1,6 +1,6 @@
 # balo-orderly-submission
 
-## EMA Cross Strategy Overview
+## EMA Cross Strategy
 ![alt Strategy plot](assets/bokeh_plot.png "EMA Cross Strategy over DOGE")
 
 ### Backtest Report: **EMA Cross Strategy**
@@ -92,6 +92,8 @@ The average trade lasted **22 minutes**, indicating that the strategy is very sh
 The **EMA Cross Strategy** performed well in terms of risk-adjusted returns, offering a balanced approach to short-term trading. It minimized exposure, controlled drawdowns, and achieved strong profitability relative to the risk taken. Further refinement could enhance the win rate and allow the strategy to outperform a simple Buy & Hold approach over similar periods.
 
 ___
+
+## EMA Cross Strategy Overview
 
 ### 1. **Focus**
 The **EMA Cross Strategy** focuses on identifying trend reversals using a combination of **Exponential Moving Averages (EMAs)** and the **Relative Strength Index (RSI)**. The strategy incorporates strict risk management rules, including stop loss and take profit targets, to maximize profitability while minimizing risk exposure.
